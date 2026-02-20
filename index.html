@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beads & Brain — Learn Abacus the Fun Way!</title>
+    <meta name="description"
+        content="Beads & Brain is a fun, interactive abacus learning platform for kids. Master mental math with tutorials, practice sheets, and exciting exams!">
+    <meta name="keywords" content="abacus, learning, kids, math, mental math, education, practice, tutorial">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/new-styles.css">
+</head>
+
+<body>
+    <!-- ========== FLOATING BEAD DECORATIONS ========== -->
+    <div class="floating-beads" aria-hidden="true">
+        <span class="float-bead fb1"></span>
+        <span class="float-bead fb2"></span>
+        <span class="float-bead fb3"></span>
+        <span class="float-bead fb4"></span>
+        <span class="float-bead fb5"></span>
+        <span class="float-bead fb6"></span>
+        <span class="float-bead fb7"></span>
+        <span class="float-bead fb8"></span>
+    </div>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo" id="nav-logo">
+                <span class="logo-icon">🧮</span>
+                <span class="logo-text">Beads <span class="amp">&</span> Brain</span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link active" data-page="home">🏠 Home</a></li>
+                <li><a href="#learn" class="nav-link" data-page="learn">🧮 Abacus</a></li>
+                <li><a href="#tutorials" class="nav-link" data-page="tutorials">📚 Tutorials</a></li>
+                <li><a href="#practice" class="nav-link" data-page="practice">📝 Practice</a></li>
+                <li><a href="#exam" class="nav-link" data-page="exam">🎯 Exam</a></li>
+                <li><a href="#progress" class="nav-link" data-page="progress">📊 Progress</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="app">
+
+        <!-- ===== HOME PAGE ===== -->
+        <section id="page-home" class="page active">
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="hero-badge">✨ India's Fun Abacus Platform</div>
+                    <h1 class="hero-title">
+                        Learn <span class="gradient-text">Abacus</span><br>
+                        The Fun Way!
+                    </h1>
+                    <p class="hero-subtitle">
+                        Master mental math with our interactive abacus playground,
+                        step-by-step tutorials, and exciting challenges.
+                        Let's make math your superpower! 🚀
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-lg" onclick="App.navigate('learn')">
+                            🧮 Start Playing
+                        </button>
+                        <button class="btn btn-secondary btn-lg" onclick="App.navigate('tutorials')">
+                            📚 Learn First
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Lessons</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Practice Problems</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Exam Levels</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-abacus-wrapper">
+                        <div id="hero-abacus" class="mini-abacus"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Cards -->
+            <div class="features-section">
+                <h2 class="section-title">Why Kids Love <span class="gradient-text">Beads & Brain</span></h2>
+                <div class="features-grid">
+                    <div class="feature-card fc-purple" onclick="App.navigate('learn')">
+                        <div class="feature-icon">🧮</div>
+                        <h3>Interactive Abacus</h3>
+                        <p>Play with a real virtual abacus! Click beads to move them and watch numbers come alive.</p>
+                        <span class="feature-arrow">→</span>
+                    </div>
+                    <div class="feature-card fc-teal" onclick="App.navigate('tutorials')">
+                        <div class="feature-icon">📖</div>
+                        <h3>Fun Tutorials</h3>
+                        <p>Learn step-by-step with colorful lessons, from basics to advanced mental math tricks.</p>
+                        <span class="feature-arrow">→</span>
+                    </div>
+                    <div class="feature-card fc-orange" onclick="App.navigate('practice')">
+                        <div class="feature-icon">📝</div>
+                        <h3>Practice Sheets</h3>
+                        <p>Download and print fun worksheets to practice offline. Multiple difficulty levels!</p>
+                        <span class="feature-arrow">→</span>
+                    </div>
+                    <div class="feature-card fc-pink" onclick="App.navigate('exam')">
+                        <div class="feature-icon">🏆</div>
+                        <h3>Exciting Exams</h3>
+                        <p>Test your skills with timed challenges and earn stars, badges, and certificates!</p>
+                        <span class="feature-arrow">→</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How it works -->
+            <div class="how-section">
+                <h2 class="section-title">How It <span class="gradient-text">Works</span></h2>
+                <div class="steps-row">
+                    <div class="step-card">
+                        <div class="step-num">1</div>
+                        <div class="step-icon">📚</div>
+                        <h3>Learn</h3>
+                        <p>Watch tutorials and understand abacus basics</p>
+                    </div>
+                    <div class="step-connector">→</div>
+                    <div class="step-card">
+                        <div class="step-num">2</div>
+                        <div class="step-icon">🧮</div>
+                        <h3>Practice</h3>
+                        <p>Use the interactive abacus and worksheets</p>
+                    </div>
+                    <div class="step-connector">→</div>
+                    <div class="step-card">
+                        <div class="step-num">3</div>
+                        <div class="step-icon">🎯</div>
+                        <h3>Test</h3>
+                        <p>Take exams and track your progress</p>
+                    </div>
+                    <div class="step-connector">→</div>
+                    <div class="step-card">
+                        <div class="step-num">4</div>
+                        <div class="step-icon">🌟</div>
+                        <h3>Master</h3>
+                        <p>Become a mental math champion!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== LEARN / ABACUS PAGE ===== -->
+        <section id="page-learn" class="page">
+            <div class="page-header">
+                <h1>🧮 Abacus <span class="gradient-text">Playground</span></h1>
+                <p>Click on beads to move them! The number display shows your current value.</p>
+            </div>
+            <div class="abacus-playground">
+                <div class="abacus-controls-top">
+                    <div class="abacus-display">
+                        <span class="display-label">Current Value</span>
+                        <span class="display-value" id="abacus-value">0</span>
+                    </div>
+                    <div class="abacus-actions">
+                        <button class="btn btn-small btn-accent" id="abacus-reset">🔄 Reset</button>
+                        <button class="btn btn-small btn-secondary" id="abacus-challenge-btn">🎯 Challenge Me!</button>
+                    </div>
+                </div>
+                <div class="challenge-bar" id="challenge-bar" style="display:none;">
+                    <div class="challenge-content">
+                        <span class="challenge-icon">🎯</span>
+                        <span class="challenge-text">Make the number: <strong id="challenge-target">0</strong></span>
+                        <button class="btn btn-small btn-primary" id="challenge-check">Check ✓</button>
+                        <button class="btn btn-small btn-ghost" id="challenge-skip">Skip →</button>
+                    </div>
+                    <div class="challenge-result" id="challenge-result"></div>
+                </div>
+                <div class="abacus-container" id="main-abacus"></div>
+                <div class="abacus-help">
+                    <div class="help-item">
+                        <span class="help-dot heaven"></span>
+                        <span>Top bead = <strong>5</strong></span>
+                    </div>
+                    <div class="help-item">
+                        <span class="help-dot earth"></span>
+                        <span>Bottom beads = <strong>1</strong> each</span>
+                    </div>
+                    <div class="help-item">
+                        <span>💡</span>
+                        <span>Click a bead to move it toward the bar</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TUTORIALS PAGE ===== -->
+        <section id="page-tutorials" class="page">
+            <div class="page-header">
+                <h1>📚 Learn <span class="gradient-text">Abacus</span></h1>
+                <p>Follow these fun lessons to become an abacus master!</p>
+            </div>
+            <div class="tutorials-container" id="tutorials-container">
+                <!-- Lesson list (generated by JS) -->
+                <div class="lessons-sidebar" id="lessons-sidebar"></div>
+                <!-- Lesson content area -->
+                <div class="lesson-content" id="lesson-content">
+                    <div class="lesson-placeholder">
+                        <div class="placeholder-icon">📖</div>
+                        <h2>Choose a Lesson</h2>
+                        <p>Select a lesson from the sidebar to start learning!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PRACTICE PAGE ===== -->
+        <section id="page-practice" class="page">
+            <div class="page-header">
+                <h1>📝 Practice <span class="gradient-text">Sheets</span></h1>
+                <p>Download and print worksheets to practice anytime, anywhere!</p>
+            </div>
+            <div class="practice-container" id="practice-container">
+                <!-- Practice controls -->
+                <div class="practice-controls">
+                    <div class="control-group">
+                        <label>📊 Difficulty Level</label>
+                        <div class="btn-group" id="difficulty-group">
+                            <button class="btn btn-toggle active" data-level="beginner">🌱 Beginner</button>
+                            <button class="btn btn-toggle" data-level="intermediate">🌿 Intermediate</button>
+                            <button class="btn btn-toggle" data-level="advanced">🌳 Advanced</button>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label>📋 Sheet Type</label>
+                        <div class="btn-group" id="type-group">
+                            <button class="btn btn-toggle active" data-type="numbers">🔢 Numbers</button>
+                            <button class="btn btn-toggle" data-type="addition">➕ Addition</button>
+                            <button class="btn btn-toggle" data-type="subtraction">➖ Subtraction</button>
+                            <button class="btn btn-toggle" data-type="mixed">🔀 Mixed</button>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label>📄 Number of Questions</label>
+                        <select class="select-input" id="question-count">
+                            <option value="10">10 Questions</option>
+                            <option value="20" selected>20 Questions</option>
+                            <option value="30">30 Questions</option>
+                            <option value="50">50 Questions</option>
+                        </select>
+                    </div>
+                    <div class="control-actions">
+                        <button class="btn btn-primary btn-lg" id="generate-sheet">📝 Generate Sheet</button>
+                        <button class="btn btn-secondary btn-lg" id="download-sheet" style="display:none;">📥 Download /
+                            Print</button>
+                    </div>
+                </div>
+                <!-- Practice sheet preview -->
+                <div class="sheet-preview" id="sheet-preview">
+                    <div class="sheet-placeholder">
+                        <div class="placeholder-icon">📄</div>
+                        <h2>Generate a Practice Sheet</h2>
+                        <p>Select your options above and click "Generate Sheet" to create a printable worksheet!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EXAM PAGE ===== -->
+        <section id="page-exam" class="page">
+            <div class="page-header">
+                <h1>🎯 Exam <span class="gradient-text">Zone</span></h1>
+                <p>Test your abacus skills and earn stars!</p>
+            </div>
+            <div class="exam-container" id="exam-container">
+                <!-- Exam setup (shown initially) -->
+                <div class="exam-setup" id="exam-setup">
+                    <div class="exam-levels">
+                        <h2>Choose Your Level</h2>
+                        <div class="levels-grid">
+                            <div class="level-card" data-level="1">
+                                <div class="level-stars">⭐</div>
+                                <h3>Level 1</h3>
+                                <p>Numbers 1-9</p>
+                                <span class="level-tag">Beginner</span>
+                            </div>
+                            <div class="level-card" data-level="2">
+                                <div class="level-stars">⭐⭐</div>
+                                <h3>Level 2</h3>
+                                <p>Numbers 1-99</p>
+                                <span class="level-tag">Easy</span>
+                            </div>
+                            <div class="level-card" data-level="3">
+                                <div class="level-stars">⭐⭐⭐</div>
+                                <h3>Level 3</h3>
+                                <p>Addition (1-digit)</p>
+                                <span class="level-tag">Medium</span>
+                            </div>
+                            <div class="level-card" data-level="4">
+                                <div class="level-stars">⭐⭐⭐⭐</div>
+                                <h3>Level 4</h3>
+                                <p>Addition & Subtraction</p>
+                                <span class="level-tag">Hard</span>
+                            </div>
+                            <div class="level-card" data-level="5">
+                                <div class="level-stars">⭐⭐⭐⭐⭐</div>
+                                <h3>Level 5</h3>
+                                <p>Mixed Operations</p>
+                                <span class="level-tag">Expert</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Exam in progress (hidden initially) -->
+                <div class="exam-active" id="exam-active" style="display:none;">
+                    <div class="exam-topbar">
+                        <div class="exam-info">
+                            <span class="exam-level-badge" id="exam-level-badge">Level 1</span>
+                            <span class="exam-question-num" id="exam-question-num">Q 1/10</span>
+                        </div>
+                        <div class="exam-timer" id="exam-timer">
+                            <span class="timer-icon">⏱</span>
+                            <span class="timer-value" id="timer-value">00:00</span>
+                        </div>
+                        <div class="exam-score-bar">
+                            <span>⭐ <span id="exam-score">0</span></span>
+                            <button class="btn btn-small btn-ghost" id="exam-quit">✕ Quit</button>
+                        </div>
+                    </div>
+                    <div class="exam-progress-bar">
+                        <div class="exam-progress-fill" id="exam-progress-fill"></div>
+                    </div>
+                    <div class="exam-question-area" id="exam-question-area">
+                        <!-- Question content generated by JS -->
+                    </div>
+                </div>
+                <!-- Exam results (hidden initially) -->
+                <div class="exam-results" id="exam-results" style="display:none;">
+                    <!-- Results generated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROGRESS PAGE ===== -->
+        <section id="page-progress" class="page">
+            <div class="page-header">
+                <h1>📊 Your <span class="gradient-text">Progress</span></h1>
+                <p>Track your learning journey and celebrate your achievements!</p>
+            </div>
+            <div class="progress-container" id="progress-container">
+                <div class="progress-overview">
+                    <div class="progress-stat-card ps-purple">
+                        <div class="ps-icon">🎯</div>
+                        <div class="ps-value" id="total-exams">0</div>
+                        <div class="ps-label">Exams Taken</div>
+                    </div>
+                    <div class="progress-stat-card ps-teal">
+                        <div class="ps-icon">⭐</div>
+                        <div class="ps-value" id="total-stars">0</div>
+                        <div class="ps-label">Stars Earned</div>
+                    </div>
+                    <div class="progress-stat-card ps-orange">
+                        <div class="ps-icon">🏆</div>
+                        <div class="ps-value" id="best-score">0%</div>
+                        <div class="ps-label">Best Score</div>
+                    </div>
+                    <div class="progress-stat-card ps-pink">
+                        <div class="ps-icon">📝</div>
+                        <div class="ps-value" id="sheets-done">0</div>
+                        <div class="ps-label">Sheets Printed</div>
+                    </div>
+                </div>
+                <div class="progress-details">
+                    <div class="progress-section">
+                        <h2>🏅 Badges Earned</h2>
+                        <div class="badges-grid" id="badges-grid">
+                            <div class="badge-item locked" data-badge="first-exam">
+                                <div class="badge-icon">🥇</div>
+                                <div class="badge-name">First Exam</div>
+                            </div>
+                            <div class="badge-item locked" data-badge="perfect-score">
+                                <div class="badge-icon">💯</div>
+                                <div class="badge-name">Perfect Score</div>
+                            </div>
+                            <div class="badge-item locked" data-badge="speed-demon">
+                                <div class="badge-icon">⚡</div>
+                                <div class="badge-name">Speed Demon</div>
+                            </div>
+                            <div class="badge-item locked" data-badge="practice-pro">
+                                <div class="badge-icon">📝</div>
+                                <div class="badge-name">Practice Pro</div>
+                            </div>
+                            <div class="badge-item locked" data-badge="level-master">
+                                <div class="badge-icon">👑</div>
+                                <div class="badge-name">Level Master</div>
+                            </div>
+                            <div class="badge-item locked" data-badge="abacus-hero">
+                                <div class="badge-icon">🦸</div>
+                                <div class="badge-name">Abacus Hero</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-section">
+                        <h2>📈 Exam History</h2>
+                        <div class="history-list" id="history-list">
+                            <div class="history-empty">
+                                <p>No exams taken yet. Start your first exam to see your progress here!</p>
+                                <button class="btn btn-primary" onclick="App.navigate('exam')">🎯 Take an Exam</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress-actions">
+                    <button class="btn btn-ghost" id="reset-progress-btn">🗑️ Reset All Progress</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== CONFETTI CANVAS ========== -->
+    <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-icon">🧮</span>
+                <span class="logo-text">Beads <span class="amp">&</span> Brain</span>
+            </div>
+            <p class="footer-text">Making math fun, one bead at a time! ✨</p>
+            <p class="footer-copy">© 2026 Beads & Brain. Built with ❤️ for young learners.</p>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script src="js/app.js"></script>
+    <script src="js/abacus.js"></script>
+    <script src="js/tutorials.js"></script>
+    <script src="js/practice.js"></script>
+    <script src="js/exam.js"></script>
+</body>
+
+</html>
